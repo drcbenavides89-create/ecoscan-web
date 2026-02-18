@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 <!-- Google Tag Manager -->
-<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -70,7 +70,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }
   </script>
 
-    <!-- 🔹 🔥 GOOGLE ANALYTICS (ÚNICO CAMBIO AGREGADO) -->
+  <!-- 🔹 🔥 GOOGLE ANALYTICS (ÚNICO CAMBIO AGREGADO) -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-149QKW9G85"></script>
   <script>
@@ -80,6 +80,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     gtag('config', 'G-149QKW9G85');
   </script>
   <!-- 🔥 FIN DE GOOGLE ANALYTICS -->
+
+  <!-- ✅ Preload de recursos críticos (solo performance visual) -->
+  <link rel="preload" as="image" href="./logo-ecoscan.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="./fondo-ultra.webp" type="image/webp">
 
   <style>
     * {
@@ -95,7 +99,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
         Roboto, sans-serif;
       background: radial-gradient(circle at top, #1f2933 0, #050506 55%);
-      background-image: url('fondo-ultra.png');
+      background-image: url('fondo-ultra.webp');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -103,6 +107,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background-color: rgba(0, 0, 0, 0.65);
       background-blend-mode: multiply;
       color: #f9f9f9;
+    }
+
+    /* ✅ En móvil, "fixed" suele hacer lenta la página/scroll */
+    @media (max-width: 900px) {
+      body { background-attachment: scroll; }
     }
 
     header {
@@ -129,7 +138,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     }
 
     .hero {
-      background-image: url("./fondo-ultra.png");
+      background-image: url("./fondo-ultra.webp");
       background-position: center;
       background-size: cover;
       background-repeat: no-repeat;
@@ -245,6 +254,19 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       }
     }
 
+    /* ✅ Tarjeta clickeable */
+    .service-link {
+      display: block;
+      height: 100%;
+      color: inherit;
+      text-decoration: none;
+      outline: none;
+    }
+    .service-link:focus-visible .service-card {
+      box-shadow: 0 0 0 3px rgba(247, 209, 90, 0.35), 0 12px 26px rgba(0,0,0,0.8);
+      transform: translateY(-2px);
+    }
+
     .service-card {
       background: #090b10;
       border-radius: 18px;
@@ -256,6 +278,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       flex-direction: column;
       gap: 8px;
       height: 100%;
+      transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+      cursor: pointer;
+    }
+
+    /* ✅ Hover en la tarjeta (sin “zoom/click-to-maximize”) */
+    .service-link:hover .service-card {
+      transform: translateY(-3px);
+      box-shadow: 0 18px 34px rgba(0,0,0,0.85);
+      filter: brightness(1.06);
+    }
+    .service-link:hover .service-image {
+      transform: scale(1.02);
     }
 
     .service-image {
@@ -264,6 +298,9 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       border-radius: 14px;
       object-fit: cover;
       margin-bottom: 8px;
+      background: rgba(255,255,255,0.02);
+      transition: transform 0.16s ease;
+      pointer-events: none; /* evita comportamientos raros al dar clic */
     }
 
     .service-title {
@@ -281,6 +318,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .service-note {
       font-size: 0.78rem;
       opacity: 0.75;
+    }
+
+    /* ✅ Leyenda destacada */
+    .service-cta {
+      margin-top: 2px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #60a5fa; /* azul claro recomendado: resalta sobre negro */
+      letter-spacing: 0.02em;
     }
 
     footer {
@@ -359,7 +405,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 10px 25px rgba(24, 119, 242, 0.5);
       transition: transform 0.15s ease, box-shadow 0.15s ease;
     }
-    
+
     .facebook-btn:hover {
       transform: translateY(-2px);
       box-shadow: 0 14px 30px rgba(24, 119, 242, 0.7);
@@ -402,7 +448,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- HEADER -->
   <header>
     <div class="logo-row">
-      <img src="./logo-ecoscan.png" alt="Logo de EcoScan Ultrasonido Diagnóstico en León, Guanajuato" loading="eager" decoding="async" />
+      <img src="./logo-ecoscan.webp" alt="Logo de EcoScan Ultrasonido Diagnóstico en León, Guanajuato" loading="eager" decoding="async" fetchpriority="high" />
       <div class="subtitle">Diagnóstico Radiológico Especializado</div>
     </div>
   </header>
@@ -450,132 +496,148 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
     <div class="grid">
       <!-- ABDOMINAL -->
-      <div class="service-card">
-        <img
-          src="./us-abdominal.png"
-          alt="Imagen ilustrativa de ultrasonido abdominal"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido abdominal</div>
-        <div class="service-subtitle">Hígado, vesícula, vías biliares, páncreas, bazo, riñones.</div>
-        <div class="service-note">Ideal para dolor abdominal, inflamación, cálculos u otros síntomas digestivos.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-abdominal.html" aria-label="Ultrasonido abdominal - más información">
+        <div class="service-card">
+          <img
+            src="./us-abdominal.webp"
+            alt="Imagen ilustrativa de ultrasonido abdominal"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido abdominal</div>
+          <div class="service-subtitle">Hígado, vesícula, vías biliares, páncreas, bazo, riñones.</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- PÉLVICO / GINECOLÓGICO -->
-      <div class="service-card">
-        <img
-          src="./us-pelvico.png"
-          alt="Imagen ilustrativa de ultrasonido pélvico y ginecológico"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido pélvico / ginecológico</div>
-        <div class="service-subtitle">Útero, endometrio, ovarios y anexos.</div>
-        <div class="service-note">Útil en reglas irregulares, quistes ováricos, miomas y control de DIU.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-pelvico.html" aria-label="Ultrasonido pélvico y ginecológico - más información">
+        <div class="service-card">
+          <img
+            src="./us-pelvico.webp"
+            alt="Imagen ilustrativa de ultrasonido pélvico y ginecológico"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido pélvico / ginecológico</div>
+          <div class="service-subtitle">Útero, endometrio, ovarios y anexos.</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- OBSTÉTRICO / 4D -->
-      <div class="service-card">
-        <img
-          src="./us-obstetrico.png"
-          alt="Imagen ilustrativa de ultrasonido obstétrico y 4D"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido obstétrico / 4D</div>
-        <div class="service-subtitle">Control del embarazo con imagen 2D y 4D.</div>
-        <div class="service-note">Valoración de crecimiento, líquido amniótico, placenta y bienestar fetal.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-obstetrico-4d.html" aria-label="Ultrasonido obstétrico 4D - más información">
+        <div class="service-card">
+          <img
+            src="./us-obstetrico.webp"
+            alt="Imagen ilustrativa de ultrasonido obstétrico y 4D"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido obstétrico / 4D</div>
+          <div class="service-subtitle">Control del embarazo con imagen 2D y 4D.</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- MAMARIO -->
-      <div class="service-card">
-        <img
-          src="./us-mamario.png"
-          alt="Imagen ilustrativa de ultrasonido mamario"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido mamario</div>
-        <div class="service-subtitle">Estudio complementario a la mastografía.</div>
-        <div class="service-note">Revisión de nódulos, quistes, dolor mamario o cambios en la exploración.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-mamario.html" aria-label="Ultrasonido mamario - más información">
+        <div class="service-card">
+          <img
+            src="./us-mamario.webp"
+            alt="Imagen ilustrativa de ultrasonido mamario"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido mamario</div>
+          <div class="service-subtitle">Estudio complementario a la mastografía.</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- TIROIDEO -->
-      <div class="service-card">
-        <img
-          src="./us-tiroideo.png"
-          alt="Imagen ilustrativa de ultrasonido tiroideo"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido tiroideo</div>
-        <div class="service-subtitle">Glándula tiroides y ganglios cervicales.</div>
-        <div class="service-note">Detección de nódulos, bocio, tiroiditis y cambios en el control hormonal.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-tiroideo.html" aria-label="Ultrasonido tiroideo - más información">
+        <div class="service-card">
+          <img
+            src="./us-tiroideo.webp"
+            alt="Imagen ilustrativa de ultrasonido tiroideo"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido tiroideo</div>
+          <div class="service-subtitle">Glándula tiroides y ganglios cervicales.</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- RENAL Y VÍAS URINARIAS -->
-      <div class="service-card">
-        <img
-          src="./us-renal.png"
-          alt="Imagen ilustrativa de ultrasonido renal y de vías urinarias"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido renal y de vías urinarias</div>
-        <div class="service-subtitle">Riñones, vejiga y próstata (en hombres).</div>
-        <div class="service-note">Cálculos, infecciones urinarias recurrentes, problemas para orinar.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-renal.html" aria-label="Ultrasonido renal y vías urinarias - más información">
+        <div class="service-card">
+          <img
+            src="./us-renal.webp"
+            alt="Imagen ilustrativa de ultrasonido renal y de vías urinarias"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido renal y de vías urinarias</div>
+          <div class="service-subtitle">Riñones, vejiga y próstata (en hombres).</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- DOPPLER -->
-      <div class="service-card">
-        <img
-          src="./us-doppler.png"
-          alt="Imagen ilustrativa de ultrasonido Doppler arterial, venoso y obstétrico"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido Doppler</div>
-        <div class="service-subtitle">Arterial, venoso y obstétrico.</div>
-        <div class="service-note">Valora la circulación sanguínea en venas, arterias y embarazo de alto riesgo.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-doppler.html" aria-label="Ultrasonido Doppler - más información">
+        <div class="service-card">
+          <img
+            src="./us-doppler.webp"
+            alt="Imagen ilustrativa de ultrasonido Doppler arterial, venoso y obstétrico"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido Doppler</div>
+          <div class="service-subtitle">Arterial, venoso y obstétrico.</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- MUSCULOESQUELÉTICO -->
-      <div class="service-card">
-        <img
-          src="./us-msk.png"
-          alt="Imagen ilustrativa de ultrasonido musculoesquelético"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Ultrasonido musculoesquelético</div>
-        <div class="service-subtitle">Hombro, rodilla, tobillo, manos y otras articulaciones.</div>
-        <div class="service-note">Tendinitis, desgarros, derrames articulares, quistes y lesiones deportivas.</div>
-      </div>
+      <a class="service-link" href="./servicios/ultrasonido-musculoesqueletico.html" aria-label="Ultrasonido musculoesquelético - más información">
+        <div class="service-card">
+          <img
+            src="./us-msk.webp"
+            alt="Imagen ilustrativa de ultrasonido musculoesquelético"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Ultrasonido musculoesquelético</div>
+          <div class="service-subtitle">Hombro, rodilla, tobillo, manos y otras articulaciones.</div>
+          <div class="service-cta">Clic para más información</div>
+        </div>
+      </a>
 
       <!-- OTROS -->
-      <div class="service-card">
-        <img
-          src="./fondo-ultra.png"
-          alt="Imagen ilustrativa de otros estudios de ultrasonido"
-          class="service-image"
-          loading="lazy"
-          decoding="async"
-        />
-        <div class="service-title">Otros ultrasonidos</div>
-        <div class="service-subtitle">Consulta por otros estudios disponibles.</div>
-        <div class="service-note">
-          Contáctanos por WhatsApp para revisar tu caso y recomendarte el estudio más adecuado.
+      <a class="service-link" href="./servicios/otros-ultrasonidos.html" aria-label="Otros ultrasonidos - más información">
+        <div class="service-card">
+          <img
+            src="./otros-ultras.webp"
+            alt="Imagen ilustrativa de otros estudios de ultrasonido"
+            class="service-image"
+            loading="lazy"
+            decoding="async"
+          />
+          <div class="service-title">Otros ultrasonidos</div>
+          <div class="service-subtitle">Consulta por otros estudios disponibles.</div>
+          <div class="service-cta">Clic para más información</div>
         </div>
-      </div>
+      </a>
     </div>
   </section>
 
