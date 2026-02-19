@@ -9,7 +9,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-KKDLTG55');</script>
 <!-- End Google Tag Manager -->
   <meta charset="UTF-8" />
-  <meta name="google-site-verification" content="ofW6BHh6uv6vUES2cw9qroD7Dnv0E-wBsgdvJ7hoywM" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <!-- 🔹 Título original (no se modifica) -->
@@ -301,7 +300,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 8px;
       background: rgba(255,255,255,0.02);
       transition: transform 0.16s ease;
-      pointer-events: none; /* evita comportamientos raros al dar clic */
+      pointer-events: none;
     }
 
     .service-title {
@@ -316,17 +315,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       margin-bottom: 4px;
     }
 
-    .service-note {
-      font-size: 0.78rem;
-      opacity: 0.75;
-    }
-
     /* ✅ Leyenda destacada */
     .service-cta {
       margin-top: 2px;
       font-size: 0.78rem;
       font-weight: 700;
-      color: #60a5fa; /* azul claro recomendado: resalta sobre negro */
+      color: #60a5fa;
       letter-spacing: 0.02em;
     }
 
@@ -438,6 +432,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       min-width: 260px;
       text-align: center;
     }
+
+    /* ✅✅ FIX: LINKS del bloque "Estudios frecuentes" (mismo color, sin morado) */
+    .frequent-links a,
+    .frequent-links a:visited {
+      color: #60a5fa;            /* mismo azul claro */
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .frequent-links a:hover,
+    .frequent-links a:focus-visible {
+      text-decoration: underline;
+      filter: brightness(1.08);
+    }
+    .frequent-links br { line-height: 1.9; }
   </style>
 </head>
 
@@ -561,7 +569,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
 
       <!-- TIROIDEO -->
-      <a class="service-link" href="/ultrasonido-tiroides-leon.html" aria-label="Ultrasonido tiroideo - más información">
+      <a class="service-link" href="./servicios/ultrasonido-tiroideo.html" aria-label="Ultrasonido tiroideo - más información">
         <div class="service-card">
           <img
             src="./us-tiroideo.webp"
@@ -593,7 +601,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </a>
 
       <!-- DOPPLER -->
-      <a class="service-link" href="/ultrasonido-doppler-leon.html" aria-label="Ultrasonido Doppler - más información">
+      <a class="service-link" href="./servicios/ultrasonido-doppler.html" aria-label="Ultrasonido Doppler - más información">
         <div class="service-card">
           <img
             src="./us-doppler.webp"
@@ -642,19 +650,21 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- ✅ NUEVO BLOQUE (sin romper diseño) -->
+  <section class="section">
+    <h2 class="section-title">Estudios frecuentes en León</h2>
+    <div class="card frequent-links">
+      <p>
+        <a href="/ultrasonido-tiroideo-leon.html">Ultrasonido tiroideo en León</a><br>
+        <a href="/ultrasonido-doppler-leon.html">Ultrasonido Doppler vascular en León</a><br>
+        <a href="/ultrasonido-musculoesqueletico-leon.html">Ultrasonido musculoesquelético en León</a><br>
+        <a href="/otros-ultrasonidos-leon.html">Ultrasonido de partes blandas, inguinal y testicular en León</a>
+      </p>
+    </div>
+  </section>
+
   <!-- OPINIONES DE PACIENTES -->
   <section class="section">
-  <h2 class="section-title">Estudios frecuentes en León</h2>
-
-  <div class="card">
-    <p>
-      <a href="/ultrasonido-tiroideo-leon.html">Ultrasonido tiroideo en León</a><br>
-      <a href="/ultrasonido-doppler-leon.html">Ultrasonido Doppler vascular en León</a><br>
-      <a href="/ultrasonido-musculoesqueletico-leon.html">Ultrasonido musculoesquelético en León</a><br>
-      <a href="/otros-ultrasonidos-leon.html">Ultrasonido de partes blandas, inguinal y testicular en León</a>
-    </p>
-  </div>
-</section>
     <h2 class="section-title">Opiniones de pacientes</h2>
     <div class="testimonials">
       <div class="testimonial">“Excelente servicio, muy profesional. Me explicó el estudio con calma y salí tranquila.”</div>
@@ -716,4 +726,3 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </footer>
 </body>
 </html>
-
