@@ -230,6 +230,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity: 0.92;
     }
 
+    /* ✅ FIX LINKS: mismo color siempre (incluye visitados) */
+    .card a,
+    .card a:visited {
+      color: #60a5fa;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .card a:hover,
+    .card a:focus {
+      text-decoration: underline;
+    }
+
     .grid {
       display: grid;
       grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -437,18 +449,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       min-width: 260px;
       text-align: center;
     }
-
-    /* ✅✅ CORRECCIÓN: links de "Estudios frecuentes" mismo color siempre (no morado visitado) */
-    .quick-links a,
-    .quick-links a:visited {
-      color: #60a5fa;
-      text-decoration: none;
-      font-weight: 700;
-    }
-    .quick-links a:hover {
-      text-decoration: underline;
-      filter: brightness(1.08);
-    }
   </style>
 </head>
 
@@ -653,21 +653,20 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
-  <!-- ✅✅ ESTUDIOS FRECUENTES EN LEÓN (links corregidos + mismo color) -->
+  <!-- OPINIONES DE PACIENTES -->
   <section class="section">
     <h2 class="section-title">Estudios frecuentes en León</h2>
 
-    <div class="card quick-links">
+    <div class="card">
       <p>
-        <a href="/ultrasonido-tiroides-leon.html">Ultrasonido tiroideo en León</a><br>
-        <a href="/ultrasonido-doppler-leon.html">Ultrasonido Doppler vascular en León</a><br>
-        <a href="/ultrasonido-musculoesqueletico-leon.html">Ultrasonido musculoesquelético en León</a><br>
-        <a href="/otros-ultrasonidos-leon.html">Ultrasonido de partes blandas, inguinal y testicular en León</a>
+        <a href="https://www.ultrasonidodiagnosticoleon.com/servicios/ultrasonido-tiroideo.html">Ultrasonido tiroideo en León</a><br>
+        <a href="https://www.ultrasonidodiagnosticoleon.com/servicios/ultrasonido-doppler.html">Ultrasonido Doppler vascular en León</a><br>
+        <a href="https://www.ultrasonidodiagnosticoleon.com/servicios/ultrasonido-musculoesqueletico.html">Ultrasonido musculoesquelético en León</a><br>
+        <a href="https://www.ultrasonidodiagnosticoleon.com/servicios/otros-ultrasonidos.html">Ultrasonido de partes blandas, inguinal y testicular en León</a>
       </p>
     </div>
   </section>
 
-  <!-- OPINIONES DE PACIENTES -->
   <section class="section">
     <h2 class="section-title">Opiniones de pacientes</h2>
     <div class="testimonials">
