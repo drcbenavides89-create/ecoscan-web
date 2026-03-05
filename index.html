@@ -11,6 +11,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- ✅ SEO extra (no afecta diseño) -->
+  <meta name="format-detection" content="telephone=no" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+
   <!-- 🔹 Título original (no se modifica) -->
   <title>EcoScan · Ultrasonido Diagnóstico</title>
 
@@ -18,6 +22,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta name="description" content="EcoScan Ultrasonido Diagnóstico en León, Guanajuato. Estudios de ultrasonido realizados e interpretados por Médico Radiólogo Certificado: abdominal, pélvico, obstétrico 4D, mamario, tiroideo, renal, Doppler y musculoesquelético. Atención cálida, tiempos de espera cortos y enfoque en el diagnóstico.">
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://www.ultrasonidodiagnosticoleon.com/" />
+
+  <!-- ✅ Hreflang (local + fallback) -->
+  <link rel="alternate" hreflang="es-MX" href="https://www.ultrasonidodiagnosticoleon.com/" />
+  <link rel="alternate" hreflang="es" href="https://www.ultrasonidodiagnosticoleon.com/" />
+  <link rel="alternate" hreflang="x-default" href="https://www.ultrasonidodiagnosticoleon.com/" />
 
   <!-- 🔹 Favicons y apariencia del navegador -->
   <link rel="icon" type="image/x-icon" href="/favicon.ico" />
@@ -33,6 +42,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <meta property="og:description" content="Estudios de ultrasonido realizados e interpretados por Médico Radiólogo Certificado en León, Gto. Equipos de alta resolución y explicación clara de tus resultados." />
   <meta property="og:url" content="https://www.ultrasonidodiagnosticoleon.com/" />
   <meta property="og:image" content="https://www.ultrasonidodiagnosticoleon.com/og-image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
 
   <!-- 🔹 Tarjeta para Twitter (X) -->
   <meta name="twitter:card" content="summary_large_image" />
@@ -45,6 +56,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   {
     "@context": "https://schema.org",
     "@type": "MedicalClinic",
+    "@id": "https://www.ultrasonidodiagnosticoleon.com/#clinic",
     "name": "EcoScan Ultrasonido Diagnóstico",
     "image": "https://www.ultrasonidodiagnosticoleon.com/og-image.png",
     "url": "https://www.ultrasonidodiagnosticoleon.com/",
@@ -75,12 +87,14 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 {
   "@context": "https://schema.org",
   "@type": "Physician",
+  "@id": "https://www.ultrasonidodiagnosticoleon.com/#physician",
   "name": "Dr. César Augusto Benavides Martínez",
   "alternateName": "Dr. César Benavides",
   "medicalSpecialty": "Radiology",
   "url": "https://www.ultrasonidodiagnosticoleon.com/dr-cesar-benavides-radiologo.html",
   "worksFor": {
     "@type": "MedicalClinic",
+    "@id": "https://www.ultrasonidodiagnosticoleon.com/#clinic",
     "name": "EcoScan Ultrasonido Diagnóstico",
     "url": "https://www.ultrasonidodiagnosticoleon.com/"
   },
@@ -93,6 +107,33 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     "addressCountry": "MX"
   },
   "telephone": "+52-477-553-6734"
+}
+</script>
+
+<!-- ✅ WebSite + SearchAction (neutral, ayuda a Google a entender el sitio) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "@id": "https://www.ultrasonidodiagnosticoleon.com/#website",
+  "name": "EcoScan Ultrasonido Diagnóstico",
+  "url": "https://www.ultrasonidodiagnosticoleon.com/"
+}
+</script>
+
+<!-- ✅ Breadcrumbs del home (no afecta diseño) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Inicio",
+      "item": "https://www.ultrasonidodiagnosticoleon.com/"
+    }
+  ]
 }
 </script>
   
@@ -529,6 +570,17 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </div>
   </section>
 
+  <!-- ✅ SEO LOCAL: texto adicional indexable (no cambia diseño visual) -->
+  <section class="section">
+    <div class="card">
+      <p>
+        EcoScan es un centro de <strong>diagnóstico por ultrasonido en León, Guanajuato</strong>. Realizamos estudios de ultrasonido general y especializados como Doppler y Musculoesqueléticos
+        atendidos e interpretados por <strong>Médico Radiólogo Certificado</strong>. Realizamos estudios abdominales, pélvicos,
+        obstétricos (incluyendo 4D), mamarios, tiroideos, renales, testicular, hombro, rodilla, codo y otros ultrasonidos según indicación clínica.
+      </p>
+    </div>
+  </section>
+
   <!-- ESTUDIOS DISPONIBLES -->
   <section class="section">
     <h2 class="section-title">Estudios de ultrasonido disponibles</h2>
@@ -737,6 +789,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         class="whatsapp-btn"
         target="_blank"
         rel="noopener"
+        onclick="dataLayer.push({'event':'whatsapp_click'});"
       >
         Agendar por WhatsApp
       </a>
@@ -745,7 +798,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         class="facebook-btn"
         target="_blank"
         rel="noopener"
-        onclick="dataLayer.push({'event':'whatsapp_click'});"
+        onclick="dataLayer.push({'event':'facebook_click'});"
+        aria-label="Facebook EcoScan"
       >
         f
       </a>
@@ -755,11 +809,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <footer>
     EcoScan Ultrasonido Diagnóstico · Médico Radiólogo Certificado · León, Gto.
   </footer>
-  <!-- SEO: enlace interno no visible (pasa autoridad sin afectar el diseño) -->
-<nav aria-label="Enlaces internos" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
-  <a href="/dr-cesar-benavides-radiologo.html">Dr. César Benavides, Médico Radiólogo en EcoScan</a>
-</nav>
+
+  <!-- ✅ Enlaces internos no visibles (pasa autoridad sin afectar diseño) -->
+  <nav aria-label="Enlaces internos" style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">
+    <a href="/dr-cesar-benavides-radiologo.html">Dr. César Benavides, Médico Radiólogo en EcoScan</a>
+    <a href="/servicios/ultrasonido-abdominal.html">Ultrasonido abdominal en León</a>
+    <a href="/servicios/ultrasonido-pelvico.html">Ultrasonido pélvico en León</a>
+    <a href="/servicios/ultrasonido-obstetrico-4d.html">Ultrasonido obstétrico 4D en León</a>
+    <a href="/servicios/ultrasonido-mamario.html">Ultrasonido mamario en León</a>
+    <a href="/servicios/ultrasonido-tiroideo.html">Ultrasonido tiroideo en León</a>
+    <a href="/servicios/ultrasonido-renal.html">Ultrasonido renal y vías urinarias en León</a>
+    <a href="/servicios/ultrasonido-doppler.html">Ultrasonido Doppler en León</a>
+    <a href="/servicios/ultrasonido-musculoesqueletico.html">Ultrasonido musculoesquelético en León</a>
+    <a href="/servicios/otros-ultrasonidos.html">Otros ultrasonidos en León</a>
+  </nav>
 </body>
 </html>
-
-
