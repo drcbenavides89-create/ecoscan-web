@@ -76,6 +76,11 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     },
     "medicalSpecialty": "DiagnosticImaging",
     "priceRange": "$$",
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "reviewCount": "50"
+    },
     "sameAs": [
       "https://www.facebook.com/EcoScanLeon/"
     ]
@@ -253,6 +258,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: inline-block;
       margin-top: 24px;
       padding: 14px 28px;
+      min-height: 48px;
+      min-width: 48px;
       border-radius: 999px;
       background: #25d366;
       color: #ffffff;
@@ -494,6 +501,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       display: inline-block;
       margin-top: 24px;
       padding: 14px 28px;
+      min-height: 48px;
+      min-width: 48px;
       border-radius: 999px;
       background: #2563eb;
       color: #ffffff;
@@ -515,6 +524,43 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .bottom-buttons .whatsapp-btn {
       min-width: 260px;
       text-align: center;
+    }
+
+    /* ===== BOTÓN FLOTANTE WHATSAPP SOLO MÓVIL ===== */
+    .floating-whatsapp {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      background: #25d366;
+      color: #ffffff;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      text-decoration: none;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+      z-index: 9999;
+      transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+    }
+
+    .floating-whatsapp:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(0, 0, 0, 0.42);
+      filter: brightness(1.05);
+    }
+
+    .floating-whatsapp svg {
+      width: 28px;
+      height: 28px;
+      fill: currentColor;
+    }
+
+    @media (max-width: 900px) {
+      .floating-whatsapp {
+        display: flex;
+      }
     }
   </style>
 </head>
@@ -549,7 +595,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </p>
 
       <a
-        href="https://wa.me/message/ABKU3ENSNFQ5F1"
+        href="https://wa.me/524775536734?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20un%20ultrasonido.%20%C2%BFMe%20pueden%20apoyar%3F"
         class="whatsapp-btn"
         target="_blank"
         rel="noopener"
@@ -591,7 +637,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-abdominal.webp"
-            alt="Imagen ilustrativa de ultrasonido abdominal"
+            alt="Estudio de ultrasonido abdominal en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -607,7 +653,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-pelvico.webp"
-            alt="Imagen ilustrativa de ultrasonido pélvico y ginecológico"
+            alt="Estudio de ultrasonido pélvico y ginecológico en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -623,7 +669,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-obstetrico.webp"
-            alt="Imagen ilustrativa de ultrasonido obstétrico y 4D"
+            alt="Estudio de ultrasonido obstétrico 4D en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -639,7 +685,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-mamario.webp"
-            alt="Imagen ilustrativa de ultrasonido mamario"
+            alt="Estudio de ultrasonido mamario en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -655,7 +701,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-tiroideo.webp"
-            alt="Imagen ilustrativa de ultrasonido tiroideo"
+            alt="Estudio de ultrasonido tiroideo en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -671,7 +717,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-renal.webp"
-            alt="Imagen ilustrativa de ultrasonido renal y de vías urinarias"
+            alt="Estudio de ultrasonido renal y vías urinarias en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -687,7 +733,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-doppler.webp"
-            alt="Imagen ilustrativa de ultrasonido Doppler arterial, venoso y obstétrico"
+            alt="Estudio de ultrasonido Doppler en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -703,7 +749,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./us-msk.webp"
-            alt="Imagen ilustrativa de ultrasonido musculoesquelético"
+            alt="Estudio de ultrasonido musculoesquelético en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -719,7 +765,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="service-card">
           <img
             src="./otros-ultras.webp"
-            alt="Imagen ilustrativa de otros estudios de ultrasonido"
+            alt="Otros estudios de ultrasonido en León, Gto. - EcoScan"
             class="service-image"
             loading="lazy"
             decoding="async"
@@ -767,10 +813,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </p>
 
     <iframe
-      src="https://www.google.com/maps?q=EcoScan%20Ultrasonido%20Diagn%C3%B3stico%20Le%C3%B3n%20Guanajuato&output=embed"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade">
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3721.4034564854783!2d-101.6655529247023!3d21.136336384074877!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x842bbf854d0813db%3A0xb537d650062bc7ca!2sEcoScan%20%7C%20Ultrasonido%20Diagn%C3%B3stico!5e0!3m2!1ses-419!2smx!4v1776300384779!5m2!1ses-419!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
 
     <p class="small">
@@ -785,7 +828,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         Llamar al consultorio
       </a>
       <a
-        href="https://wa.me/message/ABKU3ENSNFQ5F1"
+        href="https://wa.me/524775536734?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20un%20ultrasonido.%20%C2%BFMe%20pueden%20apoyar%3F"
         class="whatsapp-btn"
         target="_blank"
         rel="noopener"
@@ -826,6 +869,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <a href="/servicios/ultrasonido-musculoesqueletico.html">Ultrasonido musculoesquelético en León</a>
   <a href="/servicios/otros-ultrasonidos.html">Otros ultrasonidos en León</a>
   </nav>
-</body>
 
+  <a
+    href="https://wa.me/524775536734?text=Hola,%20me%20gustar%C3%ADa%20agendar%20una%20cita%20para%20un%20ultrasonido.%20%C2%BFMe%20pueden%20apoyar%3F"
+    class="floating-whatsapp"
+    target="_blank"
+    rel="noopener"
+    aria-label="Enviar mensaje por WhatsApp"
+    onclick="dataLayer.push({'event':'whatsapp_click'});"
+  >
+    <svg viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M19.11 17.38c-.27-.14-1.58-.78-1.83-.87-.24-.09-.42-.14-.6.14-.18.27-.69.87-.85 1.05-.16.18-.31.2-.58.07-.27-.14-1.12-.41-2.13-1.31-.79-.7-1.32-1.56-1.48-1.82-.16-.27-.02-.41.12-.55.12-.12.27-.31.4-.47.13-.16.18-.27.27-.45.09-.18.04-.34-.02-.47-.07-.14-.6-1.45-.82-1.98-.21-.52-.43-.45-.6-.46h-.51c-.18 0-.47.07-.72.34-.25.27-.94.92-.94 2.24s.96 2.6 1.09 2.78c.13.18 1.88 2.87 4.55 4.03.64.28 1.14.45 1.53.58.64.2 1.22.17 1.68.1.51-.08 1.58-.65 1.8-1.27.22-.63.22-1.16.15-1.27-.07-.11-.24-.18-.51-.31zM16.03 3C8.84 3 3 8.73 3 15.79c0 2.49.73 4.88 2.11 6.94L3.73 29l6.49-1.34a13.1 13.1 0 0 0 5.81 1.36c7.19 0 13.03-5.73 13.03-12.79C29.06 8.73 23.22 3 16.03 3zm0 23.84c-1.9 0-3.76-.5-5.39-1.44l-.39-.23-3.85.79.82-3.72-.25-.38a10.7 10.7 0 0 1-1.66-5.73c0-5.93 4.8-10.76 10.72-10.76 5.91 0 10.72 4.83 10.72 10.76 0 5.93-4.81 10.71-10.72 10.71z"/>
+    </svg>
+  </a>
+
+</body>
 </html>
