@@ -141,7 +141,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   ]
 }
 </script>
-  
+
   <!-- 🔹 🔥 GOOGLE ANALYTICS (ÚNICO CAMBIO AGREGADO) -->
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-149QKW9G85"></script>
@@ -158,6 +158,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   <link rel="preload" as="image" href="./fondo-ultra.webp" type="image/webp">
 
   <style>
+    :root {
+      --gold: #f7d15a;
+      --blue: #60a5fa;
+      --whatsapp: #25d366;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -207,6 +213,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .subtitle {
       font-size: 0.9rem;
       opacity: 0.8;
+      color: var(--gold);
+      letter-spacing: 0.06em;
     }
 
     .hero {
@@ -231,7 +239,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       font-size: 1.8rem;
       font-weight: 800;
       letter-spacing: 0.2em;
-      color: #f7d15a;
+      color: var(--gold);
     }
 
     .hero-title-sub {
@@ -254,6 +262,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       opacity: 0.85;
     }
 
+    @keyframes pulse-green {
+      0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.58), 0 10px 30px rgba(37, 211, 102, 0.5); }
+      70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0), 0 14px 32px rgba(37, 211, 102, 0.64); }
+      100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0), 0 10px 30px rgba(37, 211, 102, 0.5); }
+    }
+
     .whatsapp-btn {
       display: inline-block;
       margin-top: 24px;
@@ -261,7 +275,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       min-height: 48px;
       min-width: 48px;
       border-radius: 999px;
-      background: #25d366;
+      background: var(--whatsapp);
       color: #ffffff;
       font-weight: 700;
       font-size: 1rem;
@@ -269,6 +283,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
       transition: transform 0.15s ease, box-shadow 0.15s ease,
         filter 0.15s ease;
+      animation: pulse-green 2s infinite;
     }
 
     .whatsapp-btn:hover {
@@ -286,7 +301,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .section-title {
       font-size: 1.4rem;
       font-weight: 700;
-      color: #f7d15a;
+      color: var(--gold);
       margin-bottom: 18px;
       text-align: left;
     }
@@ -307,7 +322,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     /* ✅ FIX LINKS: mismo color siempre (incluye visitados) */
     .card a,
     .card a:visited {
-      color: #60a5fa;
+      color: var(--blue);
       text-decoration: none;
       font-weight: 700;
     }
@@ -348,6 +363,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-decoration: none;
       outline: none;
     }
+
     .service-link:focus-visible .service-card {
       box-shadow: 0 0 0 3px rgba(247, 209, 90, 0.35), 0 12px 26px rgba(0,0,0,0.8);
       transform: translateY(-2px);
@@ -364,18 +380,23 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       flex-direction: column;
       gap: 8px;
       height: 100%;
-      transition: transform 0.16s ease, box-shadow 0.16s ease, filter 0.16s ease;
+      transition: transform 0.28s cubic-bezier(0.2, 0.8, 0.2, 1),
+        box-shadow 0.28s ease, filter 0.28s ease, border-color 0.28s ease,
+        background 0.28s ease;
       cursor: pointer;
     }
 
-    /* ✅ Hover en la tarjeta (sin “zoom/click-to-maximize”) */
+    /* ✅ Hover en la tarjeta */
     .service-link:hover .service-card {
-      transform: translateY(-3px);
-      box-shadow: 0 18px 34px rgba(0,0,0,0.85);
-      filter: brightness(1.06);
+      transform: translateY(-8px);
+      background: #11141d;
+      border-color: var(--gold);
+      box-shadow: 0 20px 40px rgba(0,0,0,0.85);
+      filter: brightness(1.04);
     }
+
     .service-link:hover .service-image {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
 
     .service-image {
@@ -385,20 +406,22 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       object-fit: cover;
       margin-bottom: 8px;
       background: rgba(255,255,255,0.02);
-      transition: transform 0.16s ease;
-      pointer-events: none; /* evita comportamientos raros al dar clic */
+      transition: transform 0.28s ease;
+      pointer-events: none;
     }
 
     .service-title {
       font-size: 0.95rem;
       font-weight: 700;
       margin-bottom: 2px;
+      color: var(--gold);
     }
 
     .service-subtitle {
       font-size: 0.8rem;
       opacity: 0.8;
       margin-bottom: 4px;
+      flex-grow: 1;
     }
 
     .service-note {
@@ -410,9 +433,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     .service-cta {
       margin-top: 2px;
       font-size: 0.78rem;
-      font-weight: 700;
-      color: #60a5fa; /* azul claro recomendado: resalta sobre negro */
-      letter-spacing: 0.02em;
+      font-weight: 800;
+      color: var(--blue);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
     }
 
     footer {
@@ -435,7 +459,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       background: #020617;
       padding: 12px 14px;
       border-radius: 10px;
-      border-left: 3px solid #f7d15a;
+      border-left: 3px solid var(--gold);
       font-size: 0.9rem;
       opacity: 0.92;
     }
@@ -457,6 +481,12 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       text-decoration: none;
       font-weight: 700;
       box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
+      transition: transform 0.15s ease, box-shadow 0.15s ease;
+    }
+
+    .btn-google:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
     }
 
     iframe {
@@ -534,7 +564,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       width: 58px;
       height: 58px;
       border-radius: 50%;
-      background: #25d366;
+      background: var(--whatsapp);
       color: #ffffff;
       display: none;
       align-items: center;
@@ -543,6 +573,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
       z-index: 9999;
       transition: transform 0.15s ease, box-shadow 0.15s ease, filter 0.15s ease;
+      animation: pulse-green 2s infinite;
     }
 
     .floating-whatsapp:hover {
@@ -611,7 +642,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <h2 class="section-title">Ultrasonidos con la precisión de un especialista</h2>
     <div class="card">
       <p>
-        Todos los estudios son realizados e interpretados por especialista en Radiología con certificación vigente, lo que permite                                                                                                                                                                                                                                                                                                                                                              detectar hallazgos sutiles, correlacionar con tus antecedentes clínicos y ayudarte a tomar mejores decisiones con tu médico tratante.
+        Todos los estudios son realizados e interpretados por especialista en Radiología con certificación vigente, lo que permite detectar hallazgos sutiles, correlacionar con tus antecedentes clínicos y ayudarte a tomar mejores decisiones con tu médico tratante.
       </p>
     </div>
   </section>
