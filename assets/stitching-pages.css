@@ -64,6 +64,7 @@ h1 { max-width: 680px; margin-top: 10px; color: var(--ink); font-size: clamp(2.7
 footer { padding: 32px 0; text-align: center; background: #111827; color: rgba(255,255,255,.74); }
 .footer-logo { color: #fff; font-weight: 950; letter-spacing: .13em; text-transform: uppercase; }
 .floating-whatsapp { position: fixed; right: 18px; bottom: 18px; z-index: 50; width: 58px; height: 58px; display: none; place-items: center; border-radius: 50%; background: var(--green); color: #fff; box-shadow: 0 14px 34px rgba(31,157,89,.35); font-size: 1.45rem; font-weight: 950; }
+.floating-whatsapp svg { width: 28px; height: 28px; fill: currentColor; }
 
 @media (max-width: 920px) {
   .hero-grid { grid-template-columns: 1fr; }
