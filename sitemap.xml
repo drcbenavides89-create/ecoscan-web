@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version='1.0' encoding='utf-8'?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.ultrasonidodiagnosticoleon.com/</loc>
@@ -10,12 +10,10 @@
   </url>
   <url>
     <loc>https://www.ultrasonidodiagnosticoleon.com/espinograma-en-leon.html</loc>
-    <lastmod>2026-09-24</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.ultrasonidodiagnosticoleon.com/escanometria-en-leon.html</loc>
-    <lastmod>2026-09-24</lastmod>
     <priority>0.9</priority>
   </url>
   <url>
@@ -57,5 +55,23 @@
   <url>
     <loc>https://www.ultrasonidodiagnosticoleon.com/servicios/ultrasonido-obstetrico-4d.html</loc>
     <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://www.ultrasonidodiagnosticoleon.com/dr-cesar-benavides-radiologo.html</loc>
+  </url>
+  <url>
+    <loc>https://www.ultrasonidodiagnosticoleon.com/radiografia-columna-cervical-leon.html</loc>
+  </url>
+  <url>
+    <loc>https://www.ultrasonidodiagnosticoleon.com/radiografia-columna-lumbar-leon.html</loc>
+  </url>
+  <url>
+    <loc>https://www.ultrasonidodiagnosticoleon.com/tele-de-torax-leon.html</loc>
+  </url>
+  <url>
+    <loc>https://www.ultrasonidodiagnosticoleon.com/radiografia-pelvis-leon.html</loc>
+  </url>
+  <url>
+    <loc>https://www.ultrasonidodiagnosticoleon.com/radiografias-extremidades-leon.html</loc>
   </url>
 </urlset>
